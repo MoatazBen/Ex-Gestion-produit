@@ -45,13 +45,18 @@ public class Produit {
         this.prix = prix;
         this.quantite = quantite;
     }
-
+    //ToString 
+    @Override
+	final public String toString() {
+		return "Produit [id=" + id + ", nom=" + nom + ", prix=" + prix + ", quantite=" + quantite + "]";
+	}
+    
     // Getters and setters follow a consistent order
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(final Long id) {
         this.id = id;
     }
 
@@ -59,7 +64,7 @@ public class Produit {
         return nom;
     }
 
-    public void setNom(String nom) {
+    public void setNom(final String nom) {
         this.nom = nom;
     }
 
@@ -67,8 +72,8 @@ public class Produit {
         return prix;
     }
 
-    public void setPrix(double prix) {
-        if (prix < 0) {
+    public void setPrix(final double prix) {
+       if (prix < 0) {
             throw new IllegalArgumentException("Prix cannot be negative.");
         }
         this.prix = prix;
@@ -84,10 +89,7 @@ public class Produit {
         }
         this.quantite = quantite;
     }
-    //To String Method
-    @Override
-public String toString() {
-    return "Produit{id=" + id + ", nom='" + nom + "', prix=" + prix + ", quantite=" + quantite + '}';
-}
+
+	
 
 }
